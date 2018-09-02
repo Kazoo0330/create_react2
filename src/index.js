@@ -1,21 +1,18 @@
-const array1 = [0, 1, 2, 3, 4];
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.js'
 
-const newArray1 = array1.filter((output, index) => {
-  return output > 3
-});
+const todos = [
+  {id: 1, title: "title1"},
+  {id: 2, title: "title2"},
+  {id: 3, title: "title3"},
+  {id: 4, title: "title4"}
+];
 
-console.log(newArray1);
+const deleteTargetId = 4;
 
-const array2 = ['アムロ', 'ハヤト', 'カイ', 'リュウ', 'ブライト'];
+const deleteArray = todos.filter(todo => todo.id !== deleteTargetId);
 
-const newArray2 = array2.filter((output, index) => {
-  return output === 'アムロ';
-});
+console.log(deleteArray)
 
-console.log(newArray2);
-
-const newArray3 = array2.filter((output, index) => {
-  return output.length > 3;
-});
-
-console.log(newArray3);
+ReactDOM.render(<App />, document.getElementById('root'));
